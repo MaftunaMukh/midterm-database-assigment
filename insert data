@@ -1,0 +1,80 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "collapsed_sections": [],
+      "private_outputs": true,
+      "authorship_tag": "ABX9TyN3EgEZ7VZLYqyE1c20vZeh",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    },
+    "accelerator": "GPU"
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MaftunaMukh/midterm-database-assigment/blob/main/insert%20data\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "gONUB-Hq-Pkn"
+      },
+      "outputs": [],
+      "source": [
+        "INSERT INTO DRIVER VALUES (010779229309126546, 'Edward', 'Adams', 1,\t'Y');\n",
+        "INSERT INTO DRIVER VALUES (436078793532348843, 'Marley', 'Wilson', 3,\t'Y');\n",
+        "INSERT INTO DRIVER VALUES (278376123343433642, 'Willow', 'Burton', 2,\t'Y');\n",
+        "INSERT INTO DRIVER VALUES (212231031943783239, 'Sawyer', 'Harris',\t4,\t'Y');\n",
+        "INSERT INTO DRIVER VALUES (113094223532497428, 'James', 'Stevens',\t1,\t'N');\n",
+        "INSERT INTO DRIVER VALUES (321329871744298241, 'Robert', 'Robinson',\t4,\t'N');\n",
+        "INSERT INTO DRIVER VALUES (131292130292322248, 'John', 'Lewis',\t\t2,\t'Y');\n",
+        "INSERT INTO DRIVER VALUES (132043253287943212, 'Thomas', 'Walker',4,\t'Y');\n",
+        "INSERT INTO DRIVER VALUES (953213322280432132, 'Charles', 'Baker',\t4,\t'Y');\n",
+        "INSERT INTO DRIVER VALUES (103243312318973164, 'Daniel\t', 'Holmes',3,\t'N');\n",
+        "\n",
+        "INSERT INTO LANGUAGE VALUES ('ar',\t'Arabic');\n",
+        "INSERT INTO LANGUAGE VALUES ('ch',\t'Chinese');\n",
+        "INSERT INTO LANGUAGE VALUES ('en',\t'English');\n",
+        "INSERT INTO LANGUAGE VALUES ('fr',\t'French');\n",
+        "INSERT INTO LANGUAGE VALUES ('de',\t'German');\n",
+        "INSERT INTO LANGUAGE VALUES ('hi',\t'Hindi');\n",
+        "INSERT INTO LANGUAGE VALUES ('id',\t'Indonesian');\n",
+        "INSERT INTO LANGUAGE VALUES ('it',\t'Italian');\n",
+        "INSERT INTO LANGUAGE VALUES ('ja',\t'Japanese');\n",
+        "INSERT INTO LANGUAGE VALUES ('ko',\t'Korean');\n",
+        "INSERT INTO LANGUAGE VALUES ('ms',\t'Malay');\n",
+        "INSERT INTO LANGUAGE VALUES ('fa',\t'Persian');\n",
+        "INSERT INTO LANGUAGE VALUES ('pt',\t'Portuguese');\n",
+        "INSERT INTO LANGUAGE VALUES ('ru',\t'Russian');\n",
+        "INSERT INTO LANGUAGE VALUES ('es',\t'Spanish');\n",
+        "INSERT INTO LANGUAGE VALUES ('th',\t'Thai');\n",
+        "INSERT INTO LANGUAGE VALUES ('vi',\t'Vietnamese');\n",
+        "\n",
+        "INSERT INTO GAMEOFFICIAl VALUES ('Russia',98437832,'Justin','Allen',\t'head-coach','Russian');\n",
+        "INSERT INTO GAMEOFFICIAl VALUES ('Korea',42142432,\t'Anna','Jones','coach','Korean');\n",
+        "INSERT INTO GAMEOFFICIAl VALUES ('Korea',\t84729274, 'Emma','Foster','physician','Korean');\n",
+        "INSERT INTO GAMEOFFICIAl VALUES ('Thailand'98473678,'Nicole','Matthews',\t'competitor','Thailand');\n",
+        "INSERT INTO GAMEOFFICIAl VALUES ('Germany',98274098,'Nicole','Young',\t'physiotherapist','German');\n",
+        "INSERT INTO GAMEOFFICIAl VALUES ('Vietnam',93728493,'Scott','Smith',\t'sports agent','Vietnamese');\n",
+        "INSERT INTO GAMEOFFICIAl VALUES ('England',\t94378493,'Christine','Collins','sports manager','English');\n",
+        "INSERT INTO GAMEOFFICIAl VALUES ('England',948347585,\t'Samuel','Edwards','personal trainer','English');\n"
+      ]
+    }
+  ]
+}
