@@ -1,0 +1,168 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyNMogDocIgqsrqUxpQ+v+VV",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MaftunaMukh/midterm-database-assigment/blob/main/create%20table\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "7tMXbuAv9XTt"
+      },
+      "outputs": [],
+      "source": [
+        "SET check_function_bodies = false;\n",
+        "\n",
+        "CREATE TABLE \"Game Officials\"(\n",
+        "  \"RepresentingCountry\" varchar NOT NULL,\n",
+        "  \"City_ID\" integer,\n",
+        "  \"Name\" varchar,\n",
+        "  \"job title\" varchar,\n",
+        "  \"prefer language\" varchar,\n",
+        "  CONSTRAINT \"Game Officials_pkey\" PRIMARY KEY(\"RepresentingCountry\")\n",
+        ");\n",
+        "\n",
+        "CREATE TABLE \"official language\"(\n",
+        "  \"LanguageID\" char NOT NULL,\n",
+        "  \"officialID\" integer,\n",
+        "  \"official _officialID\" integer,\n",
+        "  \"Language_LanguageID\" char NOT NULL,\n",
+        "  CONSTRAINT \"official language_pkey\" PRIMARY KEY(\"LanguageID\")\n",
+        ");\n",
+        "\n",
+        "CREATE TABLE \"Language\"(\n",
+        "\"LanguageID\" char NOT NULL, \"LanguageName\" varchar,\n",
+        "  CONSTRAINT \"Language_pkey\" PRIMARY KEY(\"LanguageID\")\n",
+        ");\n",
+        "\n",
+        "CREATE TABLE \"Driver Language\"(\n",
+        "  \"LanguageID\" char NOT NULL,\n",
+        "  \"Language_LanguageID\" char NOT NULL,\n",
+        "  \"Driver_DriverLicense\" integer NOT NULL,\n",
+        "  CONSTRAINT \"Driver Language_pkey\" PRIMARY KEY(\"LanguageID\")\n",
+        ");\n",
+        "\n",
+        "CREATE TABLE \"Driver\"(\n",
+        "  \"DriverLicense\" integer NOT NULL,\n",
+        "  \"Driver_name\" varchar,\n",
+        "  \"ClearanceLevel\" smallint,\n",
+        "  CONSTRAINT \"Driver_pkey\" PRIMARY KEY(\"DriverLicense\")\n",
+        ");\n",
+        "\n",
+        "CREATE TABLE \"Booking information\"(\n",
+        "  \"Booking Reference number\" integer NOT NULL,\n",
+        "  \"DriverLicense\" integer,\n",
+        "  \"VehicleID\" char,\n",
+        "  \"officialID\" integer,\n",
+        "  \"PickUpLocation\" smallint,\n",
+        "  \"Droplocation\" smallint,\n",
+        "  \"start odometer value \" integer,\n",
+        "  \"end odometer value\" integer,\n",
+        "  \"Start Time\" date,\n",
+        "  \"End Time\" date,\n",
+        "  \"Driver_DriverLicense\" integer NOT NULL,\n",
+        "  \"official _officialID\" integer NOT NULL,\n",
+        "  \"Vehicle_VIN\" char NOT NULL,\n",
+        "  \"Location_LocationName\" varchar,\n",
+        "  CONSTRAINT \"Booking information_pkey\" PRIMARY KEY(\"Booking Reference number\")\n",
+        ");\n",
+        "\n",
+        "CREATE TABLE \"Vehicle\"(\n",
+        "  \"VehicleID\" char NOT NULL,\n",
+        "  \"RegistrationID\" smallint,\n",
+        "  \"Manufacturer\" varchar,\n",
+        "  \"Model\" varchar,\n",
+        "  \"Colour\" varchar,\n",
+        "  \"Odometer\" integer,\n",
+        "  \"Passenger capacity\" smallint,\n",
+        "  \"Availability\" char,\n",
+        "  CONSTRAINT \"Vehicle_pkey\" PRIMARY KEY(\"VehicleID\")\n",
+        ");\n",
+        "\n",
+        "CREATE TABLE \"Location\"(\n",
+        "  \"LocationName\" smallint NOT NULL,\n",
+        "  \"Address\" varchar,\n",
+        "  \"LocationType\" varchar,\n",
+        "  CONSTRAINT \"Location_pkey\" PRIMARY KEY(\"LocationName\")\n",
+        ");\n",
+        "\n",
+        "ALTER TABLE \"official language\"\n",
+        "  ADD CONSTRAINT \"official language_official _officialID_fkey\"\n",
+        "    FOREIGN KEY (\"official _officialID\")\n",
+        "      REFERENCES \"Game Officials\" (\"RepresentingCountry\");\n",
+        "\n",
+        "ALTER TABLE \"Driver Language\"\n",
+        "  ADD CONSTRAINT \"Driver Language_Language_LanguageID_fkey\"\n",
+        "    FOREIGN KEY (\"Language_LanguageID\") REFERENCES \"Language\" (\"LanguageID\");\n",
+        "\n",
+        "ALTER TABLE \"official language\"\n",
+        "  ADD CONSTRAINT \"official language_Language_LanguageID_fkey\"\n",
+        "    FOREIGN KEY (\"Language_LanguageID\") REFERENCES \"Language\" (\"LanguageID\");\n",
+        "\n",
+        "ALTER TABLE \"Driver Language\"\n",
+        "  ADD CONSTRAINT \"Driver Language_Driver_DriverLicense_fkey\"\n",
+        "    FOREIGN KEY (\"Driver_DriverLicense\") REFERENCES \"Driver\" (\"DriverLicense\");\n",
+        "\n",
+        "ALTER TABLE \"Booking information\"\n",
+        "  ADD CONSTRAINT \"Booking information_Driver_DriverLicense_fkey\"\n",
+        "    FOREIGN KEY (\"Driver_DriverLicense\") REFERENCES \"Driver\" (\"DriverLicense\");\n",
+        "\n",
+        "ALTER TABLE \"Booking information\"\n",
+        "  ADD CONSTRAINT \"Booking information_official _officialID_fkey\"\n",
+        "    FOREIGN KEY (\"official _officialID\")\n",
+        "      REFERENCES \"Game Officials\" (\"RepresentingCountry\");\n",
+        "\n",
+        "ALTER TABLE \"Booking information\"\n",
+        "  ADD CONSTRAINT \"Booking information_Vehicle_VIN_fkey\"\n",
+        "    FOREIGN KEY (\"Vehicle_VIN\") REFERENCES \"Vehicle\" (\"VehicleID\");\n",
+        "\n",
+        "ALTER TABLE \"Booking information\"\n",
+        "  ADD CONSTRAINT \"Booking information_Location_LocationName_fkey1\"\n",
+        "    FOREIGN KEY (\"Location_LocationName\") REFERENCES \"Location\" (\"LocationName\")\n",
+        "  ;\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "I7RPHPAJEekL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "si1RD_G9-Nd7"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
